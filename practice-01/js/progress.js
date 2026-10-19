@@ -1,7 +1,9 @@
 "use strict";
 
-const totalTasks = 10;
-const completedTasks = 7;
+// Входные данные. Для трёх запусков меняются только эти две строки:
+// запуск 1: 12 и 5; запуск 2: 0 и 0; запуск 3: 5 и 6.
+const totalTasks = 12;
+const completedTasks = 5;
 
 if (typeof totalTasks !== "number" || typeof completedTasks !== "number") {
   console.log("Ошибка: значения должны быть числами.");
