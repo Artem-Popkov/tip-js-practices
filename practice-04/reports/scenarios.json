@@ -1,0 +1,393 @@
+{
+  "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0.1 Safari/605.1.15",
+  "records": [
+    {
+      "label": "Общий: исходный",
+      "ids": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "stats": {
+        "total": "4",
+        "completed": "2",
+        "pending": "2",
+        "progress": "50.0%",
+        "visible": "4"
+      },
+      "storage": null
+    },
+    {
+      "label": "Общий: добавление 20",
+      "ids": [
+        1,
+        4,
+        7,
+        10,
+        20
+      ],
+      "stats": {
+        "total": "5",
+        "completed": "2",
+        "pending": "3",
+        "progress": "40.0%",
+        "visible": "5"
+      },
+      "storage": "{\"version\":1,\"tasks\":[{\"id\":1,\"title\":\"Изучить функции\",\"completed\":true,\"priority\":\"medium\"},{\"id\":4,\"title\":\"Подготовить модель задач\",\"completed\":false,\"priority\":\"high\"},{\"id\":7,\"title\":\"Проверить методы массивов\",\"completed\":false,\"priority\":\"low\"},{\"id\":10,\"title\":\"Оформить README\",\"completed\":true,\"priority\":\"medium\"},{\"id\":20,\"title\":\"Изучить localStorage\",\"completed\":false,\"priority\":\"high\"}]}"
+    },
+    {
+      "label": "Общий: отказ повторного id",
+      "ids": [
+        1,
+        4,
+        7,
+        10,
+        20
+      ],
+      "stats": {
+        "total": "5",
+        "completed": "2",
+        "pending": "3",
+        "progress": "40.0%",
+        "visible": "5"
+      },
+      "storage": "{\"version\":1,\"tasks\":[{\"id\":1,\"title\":\"Изучить функции\",\"completed\":true,\"priority\":\"medium\"},{\"id\":4,\"title\":\"Подготовить модель задач\",\"completed\":false,\"priority\":\"high\"},{\"id\":7,\"title\":\"Проверить методы массивов\",\"completed\":false,\"priority\":\"low\"},{\"id\":10,\"title\":\"Оформить README\",\"completed\":true,\"priority\":\"medium\"},{\"id\":20,\"title\":\"Изучить localStorage\",\"completed\":false,\"priority\":\"high\"}]}"
+    },
+    {
+      "label": "Общий: редактирование 4",
+      "ids": [
+        1,
+        4,
+        7,
+        10,
+        20
+      ],
+      "stats": {
+        "total": "5",
+        "completed": "2",
+        "pending": "3",
+        "progress": "40.0%",
+        "visible": "5"
+      },
+      "storage": "{\"version\":1,\"tasks\":[{\"id\":1,\"title\":\"Изучить функции\",\"completed\":true,\"priority\":\"medium\"},{\"id\":4,\"title\":\"Подготовить форму задач\",\"completed\":false,\"priority\":\"low\"},{\"id\":7,\"title\":\"Проверить методы массивов\",\"completed\":false,\"priority\":\"low\"},{\"id\":10,\"title\":\"Оформить README\",\"completed\":true,\"priority\":\"medium\"},{\"id\":20,\"title\":\"Изучить localStorage\",\"completed\":false,\"priority\":\"high\"}]}"
+    },
+    {
+      "label": "Общий: выполнена 7",
+      "ids": [
+        1,
+        4,
+        7,
+        10,
+        20
+      ],
+      "stats": {
+        "total": "5",
+        "completed": "3",
+        "pending": "2",
+        "progress": "60.0%",
+        "visible": "5"
+      },
+      "storage": "{\"version\":1,\"tasks\":[{\"id\":1,\"title\":\"Изучить функции\",\"completed\":true,\"priority\":\"medium\"},{\"id\":4,\"title\":\"Подготовить форму задач\",\"completed\":false,\"priority\":\"low\"},{\"id\":7,\"title\":\"Проверить методы массивов\",\"completed\":true,\"priority\":\"low\"},{\"id\":10,\"title\":\"Оформить README\",\"completed\":true,\"priority\":\"medium\"},{\"id\":20,\"title\":\"Изучить localStorage\",\"completed\":false,\"priority\":\"high\"}]}"
+    },
+    {
+      "label": "Общий: удалена 1",
+      "ids": [
+        4,
+        7,
+        10,
+        20
+      ],
+      "stats": {
+        "total": "4",
+        "completed": "2",
+        "pending": "2",
+        "progress": "50.0%",
+        "visible": "4"
+      },
+      "storage": "{\"version\":1,\"tasks\":[{\"id\":4,\"title\":\"Подготовить форму задач\",\"completed\":false,\"priority\":\"low\"},{\"id\":7,\"title\":\"Проверить методы массивов\",\"completed\":true,\"priority\":\"low\"},{\"id\":10,\"title\":\"Оформить README\",\"completed\":true,\"priority\":\"medium\"},{\"id\":20,\"title\":\"Изучить localStorage\",\"completed\":false,\"priority\":\"high\"}]}"
+    },
+    {
+      "label": "Общий: после обновления",
+      "ids": [
+        4,
+        7,
+        10,
+        20
+      ],
+      "stats": {
+        "total": "4",
+        "completed": "2",
+        "pending": "2",
+        "progress": "50.0%",
+        "visible": "4"
+      },
+      "storage": "{\"version\":1,\"tasks\":[{\"id\":4,\"title\":\"Подготовить форму задач\",\"completed\":false,\"priority\":\"low\"},{\"id\":7,\"title\":\"Проверить методы массивов\",\"completed\":true,\"priority\":\"low\"},{\"id\":10,\"title\":\"Оформить README\",\"completed\":true,\"priority\":\"medium\"},{\"id\":20,\"title\":\"Изучить localStorage\",\"completed\":false,\"priority\":\"high\"}]}"
+    },
+    {
+      "label": "Общий: сброс",
+      "ids": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "stats": {
+        "total": "4",
+        "completed": "2",
+        "pending": "2",
+        "progress": "50.0%",
+        "visible": "4"
+      },
+      "storage": null
+    },
+    {
+      "label": "Общий: повреждённый JSON",
+      "ids": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "stats": {
+        "total": "4",
+        "completed": "2",
+        "pending": "2",
+        "progress": "50.0%",
+        "visible": "4"
+      },
+      "storage": "{broken-json"
+    },
+    {
+      "label": "Вариант: исходный",
+      "ids": [
+        11,
+        23,
+        37,
+        41,
+        58,
+        64
+      ],
+      "stats": {
+        "total": "6",
+        "completed": "6",
+        "pending": "0",
+        "progress": "100.0%",
+        "visible": "6"
+      },
+      "storage": null
+    },
+    {
+      "label": "Вариант: добавление 75",
+      "ids": [
+        11,
+        23,
+        37,
+        41,
+        58,
+        64,
+        75
+      ],
+      "stats": {
+        "total": "7",
+        "completed": "6",
+        "pending": "1",
+        "progress": "85.7%",
+        "visible": "7"
+      },
+      "storage": "{\"version\":1,\"tasks\":[{\"id\":11,\"title\":\"Собрать список изменений\",\"completed\":true,\"priority\":\"medium\"},{\"id\":23,\"title\":\"Обновить README проекта\",\"completed\":true,\"priority\":\"low\"},{\"id\":37,\"title\":\"Прогнать все проверки checks.js\",\"completed\":true,\"priority\":\"high\"},{\"id\":41,\"title\":\"Зафиксировать номер версии\",\"completed\":true,\"priority\":\"medium\"},{\"id\":58,\"title\":\"Проверить работу на чистой копии репозитория\",\"completed\":true,\"priority\":\"high\"},{\"id\":64,\"title\":\"Опубликовать релиз на GitHub\",\"completed\":true,\"priority\":\"low\"},{\"id\":75,\"title\":\"Проверить учебный релиз\",\"completed\":false,\"priority\":\"medium\"}]}"
+    },
+    {
+      "label": "Вариант: редактирование 23",
+      "ids": [
+        11,
+        23,
+        37,
+        41,
+        58,
+        64,
+        75
+      ],
+      "stats": {
+        "total": "7",
+        "completed": "6",
+        "pending": "1",
+        "progress": "85.7%",
+        "visible": "7"
+      },
+      "storage": "{\"version\":1,\"tasks\":[{\"id\":11,\"title\":\"Собрать список изменений\",\"completed\":true,\"priority\":\"medium\"},{\"id\":23,\"title\":\"Обновить описание релиза\",\"completed\":true,\"priority\":\"high\"},{\"id\":37,\"title\":\"Прогнать все проверки checks.js\",\"completed\":true,\"priority\":\"high\"},{\"id\":41,\"title\":\"Зафиксировать номер версии\",\"completed\":true,\"priority\":\"medium\"},{\"id\":58,\"title\":\"Проверить работу на чистой копии репозитория\",\"completed\":true,\"priority\":\"high\"},{\"id\":64,\"title\":\"Опубликовать релиз на GitHub\",\"completed\":true,\"priority\":\"low\"},{\"id\":75,\"title\":\"Проверить учебный релиз\",\"completed\":false,\"priority\":\"medium\"}]}"
+    },
+    {
+      "label": "Вариант: удаление 37",
+      "ids": [
+        11,
+        23,
+        41,
+        58,
+        64,
+        75
+      ],
+      "stats": {
+        "total": "6",
+        "completed": "5",
+        "pending": "1",
+        "progress": "83.3%",
+        "visible": "6"
+      },
+      "storage": "{\"version\":1,\"tasks\":[{\"id\":11,\"title\":\"Собрать список изменений\",\"completed\":true,\"priority\":\"medium\"},{\"id\":23,\"title\":\"Обновить описание релиза\",\"completed\":true,\"priority\":\"high\"},{\"id\":41,\"title\":\"Зафиксировать номер версии\",\"completed\":true,\"priority\":\"medium\"},{\"id\":58,\"title\":\"Проверить работу на чистой копии репозитория\",\"completed\":true,\"priority\":\"high\"},{\"id\":64,\"title\":\"Опубликовать релиз на GitHub\",\"completed\":true,\"priority\":\"low\"},{\"id\":75,\"title\":\"Проверить учебный релиз\",\"completed\":false,\"priority\":\"medium\"}]}"
+    },
+    {
+      "label": "Вариант: после обновления",
+      "ids": [
+        11,
+        23,
+        41,
+        58,
+        64,
+        75
+      ],
+      "stats": {
+        "total": "6",
+        "completed": "5",
+        "pending": "1",
+        "progress": "83.3%",
+        "visible": "6"
+      },
+      "storage": "{\"version\":1,\"tasks\":[{\"id\":11,\"title\":\"Собрать список изменений\",\"completed\":true,\"priority\":\"medium\"},{\"id\":23,\"title\":\"Обновить описание релиза\",\"completed\":true,\"priority\":\"high\"},{\"id\":41,\"title\":\"Зафиксировать номер версии\",\"completed\":true,\"priority\":\"medium\"},{\"id\":58,\"title\":\"Проверить работу на чистой копии репозитория\",\"completed\":true,\"priority\":\"high\"},{\"id\":64,\"title\":\"Опубликовать релиз на GitHub\",\"completed\":true,\"priority\":\"low\"},{\"id\":75,\"title\":\"Проверить учебный релиз\",\"completed\":false,\"priority\":\"medium\"}]}"
+    },
+    {
+      "label": "Изоляция: общий не изменился",
+      "ids": [
+        1,
+        4,
+        7,
+        10
+      ],
+      "stats": {
+        "total": "4",
+        "completed": "2",
+        "pending": "2",
+        "progress": "50.0%",
+        "visible": "4"
+      },
+      "storage": null
+    },
+    {
+      "label": "Вариант: сброс",
+      "ids": [
+        11,
+        23,
+        37,
+        41,
+        58,
+        64
+      ],
+      "stats": {
+        "total": "6",
+        "completed": "6",
+        "pending": "0",
+        "progress": "100.0%",
+        "visible": "6"
+      },
+      "storage": null
+    },
+    {
+      "label": "Собственный: 100 символов",
+      "ok": true
+    },
+    {
+      "label": "Собственный: 101 символ отклонён",
+      "ok": true
+    },
+    {
+      "label": "Собственный: пустой список после обновления",
+      "ok": true
+    },
+    {
+      "label": "Собственный: повреждённая схема",
+      "ok": true
+    },
+    {
+      "label": "Эксперимент 1",
+      "nativeValid": false,
+      "submits": 0
+    },
+    {
+      "label": "Эксперимент 2",
+      "raw": {
+        "id": "20",
+        "title": "   ",
+        "priority": "high"
+      },
+      "validated": {
+        "ok": false,
+        "errors": {
+          "title": "Введите название от 1 до 100 символов после удаления краевых пробелов."
+        }
+      }
+    },
+    {
+      "label": "Эксперимент 3",
+      "idType": "string",
+      "titleType": "string",
+      "value": {
+        "ok": true,
+        "value": {
+          "id": 20,
+          "title": "Изучить localStorage",
+          "priority": "high"
+        }
+      }
+    },
+    {
+      "label": "Эксперимент 4",
+      "storedType": "string",
+      "json": "{\"version\":1,\"tasks\":[{\"id\":20,\"title\":\"Изучить localStorage\",\"priority\":\"high\",\"completed\":false}]}",
+      "parsed": {
+        "version": 1,
+        "tasks": [
+          {
+            "id": 20,
+            "title": "Изучить localStorage",
+            "priority": "high",
+            "completed": false
+          }
+        ]
+      }
+    },
+    {
+      "label": "Эксперимент 5",
+      "result": {
+        "ok": false,
+        "source": "fallback",
+        "tasks": [
+          {
+            "id": 1,
+            "title": "Изучить функции",
+            "completed": true,
+            "priority": "medium"
+          },
+          {
+            "id": 4,
+            "title": "Подготовить модель задач",
+            "completed": false,
+            "priority": "high"
+          },
+          {
+            "id": 7,
+            "title": "Проверить методы массивов",
+            "completed": false,
+            "priority": "low"
+          },
+          {
+            "id": 10,
+            "title": "Оформить README",
+            "completed": true,
+            "priority": "medium"
+          }
+        ],
+        "error": "Не удалось восстановить задачи; используется исходный набор. JSON Parse error: Expected '}'"
+      }
+    }
+  ]
+}

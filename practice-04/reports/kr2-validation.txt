@@ -1,0 +1,16 @@
+Вызов: {"id":"20","title":"  Изучить localStorage  ","priority":"high"}
+Результат: {
+  "ok": true,
+  "value": {
+    "id": 20,
+    "title": "Изучить localStorage",
+    "priority": "high"
+  }
+}
+Вызов: {"id":"20","title":"   ","priority":"high"}
+Результат: {
+  "ok": false,
+  "errors": {
+    "title": "Введите название от 1 до 100 символов после удаления краевых пробелов."
+  }
+}

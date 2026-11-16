@@ -1,0 +1,6 @@
+<!doctype html><meta charset="utf-8"><title>КР2 — проверка названия</title><style>body{font:20px system-ui;margin:32px;max-width:1000px}pre{font:18px monospace;background:#f1f5f9;padding:24px;white-space:pre-wrap}h1{font-size:28px}</style><h1>КР2 — задание 1</h1><p>Вызов validateTaskDraft из собственного модуля ПР4.</p><pre id="result"></pre><script type="module">
+import {validateTaskDraft} from '../src/form-validation.js';
+const lines=[];
+for(const title of ['  Изучить localStorage  ','   ']){const draft={id:'20',title,priority:'high'};lines.push('Вход: '+JSON.stringify(draft),JSON.stringify(validateTaskDraft(draft,[]),null,2),'');}
+document.querySelector('#result').textContent=lines.join('\n');
+</script>

@@ -1,0 +1,16 @@
+Safari 26.0.1, 16.11.2026. Реальный Web Inspector, Sources и Console.
+URL: http://127.0.0.1:5504/index.html?mode=check
+Отдельный ключ: tip-js-practice-04:checks:demo.
+
+Клавиатура: id90 «Проверка клавиатуры», Tab из id в title, Enter из title создал задачу. Space на кнопке статуса переключил задачу обратно в pending; фокус восстановлен. Tab до всех кнопок не подтверждён: стандартная конфигурация Safari пропускает кнопки.
+
+Breakpoint main.js:173, handleFormSubmit после validateTaskDraft:
+{"draft":{"id":"91","title":"  Отладка формы  ","priority":"medium"},"validated":{"ok":true,"value":{"id":91,"title":"Отладка формы","priority":"medium"}},"count":5,"prevented":true}
+Продолжение: карточка «Отладка формы» создана, сводка 6/2/4/33.3%.
+Повтор id4, та же остановка:
+{"draft":{"id":"4","title":"Дубликат","priority":"medium"},"validated":{"ok":false,"errors":{"id":"Задача с id 4 уже существует."}},"count":6,"savedCount":6}
+
+Breakpoint main.js:188, после addTask и перед persistCurrentTasks:
+{"ok":true,"count":7,"task":{"id":92,"title":"Проверка сохранения","completed":false,"priority":"medium"}}
+После продолжения: сводка 7/2/5/28.6%, сообщение «Изменения сохранены в localStorage».
+Вызван localStorage.getItem("tip-js-practice-04:checks:demo"): возвращена строка JSON с version:1 и tasks, начинающаяся исходными id1,4,7,10, затем тестовыми90,91,92. Представление длинной строки в дереве доступности обрезается после id91; это ограничение представления, не ошибка JSON. Полная схема и перезагрузка отдельно подтверждены browser scenarios.json.

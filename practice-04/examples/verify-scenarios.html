@@ -1,0 +1,29 @@
+<!doctype html><meta charset="utf-8"><title>ПР4 — дополнительные сценарии</title><style>body{font:16px system-ui;margin:24px}iframe{width:100%;height:500px}pre{white-space:pre-wrap}a{padding:10px;background:#def}</style><h1>ПР4 — фактические сценарии</h1><a id="save" hidden>Скачать протокол JSON</a><pre id="out">Выполняется…</pre><iframe id="app"></iframe>
+<script type="module">
+import {validateTaskDraft} from '../src/form-validation.js';
+import {loadTasks} from '../src/task-storage.js';
+import {demoTasks} from '../src/data.js';
+const frame=document.querySelector('#app'),records=[],key=d=>`tip-js-practice-04:checks:${d}`;
+const assert=(x,m)=>{if(!x)throw Error(m)};
+async function open(dataset='demo'){await new Promise(resolve=>{frame.onload=resolve;frame.src=`../index.html?mode=check&dataset=${dataset}&r=${Math.random()}`});return frame.contentDocument;}
+const click=(d,s)=>d.querySelector(s).click();
+function input(d,s,v){const x=d.querySelector(s);x.value=v;x.dispatchEvent(new d.defaultView.Event('input',{bubbles:true}));}
+function submit(d,id,title,priority='high'){if(id!==null)input(d,'#task-id',id);input(d,'#task-title',title);input(d,'#task-priority',priority);d.querySelector('form').requestSubmit();}
+function snap(d,label,dataset='demo'){records.push({label,ids:[...d.querySelectorAll('[data-task-id]')].map(x=>+x.dataset.taskId),stats:Object.fromEntries([...d.querySelectorAll('[data-stat]')].map(x=>[x.dataset.stat,x.textContent])),storage:localStorage.getItem(key(dataset))});}
+try{
+localStorage.removeItem(key('demo'));localStorage.removeItem(key('variant'));
+let d=await open();snap(d,'Общий: исходный');submit(d,'20','Изучить localStorage');snap(d,'Общий: добавление 20');
+const before=localStorage.getItem(key('demo'));submit(d,'4','Повтор');assert(localStorage.getItem(key('demo'))===before,'Отказ записал данные');snap(d,'Общий: отказ повторного id');
+click(d,'[data-task-id="4"] [data-action="edit"]');submit(d,null,'Подготовить форму задач','low');snap(d,'Общий: редактирование 4');click(d,'[data-task-id="7"] [data-action="toggle"]');snap(d,'Общий: выполнена 7');click(d,'[data-task-id="1"] [data-action="delete"]');snap(d,'Общий: удалена 1');d=await open();snap(d,'Общий: после обновления');click(d,'#reset-data');snap(d,'Общий: сброс');
+localStorage.setItem(key('demo'),'{broken-json');d=await open();assert(d.querySelector('#storage-status').classList.contains('is-warning'),'Нет предупреждения');snap(d,'Общий: повреждённый JSON');click(d,'#reset-data');
+d=await open('variant');snap(d,'Вариант: исходный','variant');submit(d,'75','Проверить учебный релиз','medium');snap(d,'Вариант: добавление 75','variant');click(d,'[data-task-id="23"] [data-action="edit"]');submit(d,null,'Обновить описание релиза','high');snap(d,'Вариант: редактирование 23','variant');click(d,'[data-task-id="37"] [data-action="delete"]');snap(d,'Вариант: удаление 37','variant');d=await open('variant');snap(d,'Вариант: после обновления','variant');
+d=await open();assert(d.querySelectorAll('[data-task-id]').length===4,'Общий изменился');snap(d,'Изоляция: общий не изменился');d=await open('variant');click(d,'#reset-data');snap(d,'Вариант: сброс','variant');
+d=await open();submit(d,'50','я'.repeat(100));assert(d.querySelector('[data-task-id="50"]'),'100 символов не приняты');records.push({label:'Собственный: 100 символов',ok:true});submit(d,'51','я'.repeat(101));assert(!d.querySelector('[data-task-id="51"]'),'101 символ принят');records.push({label:'Собственный: 101 символ отклонён',ok:true});
+localStorage.setItem(key('demo'),JSON.stringify({version:1,tasks:[]}));d=await open();assert(d.querySelectorAll('[data-task-id]').length===0,'Пустой список не восстановился');records.push({label:'Собственный: пустой список после обновления',ok:true});
+localStorage.setItem(key('demo'),JSON.stringify({version:1,tasks:[{id:1}]}));d=await open();assert(d.querySelectorAll('[data-task-id]').length===4,'Нет fallback');records.push({label:'Собственный: повреждённая схема',ok:true});
+const f=document.createElement('form');f.innerHTML='<input name="id" value="20"><input name="title" required><select name="priority"><option value="high">High</option></select><button>OK</button>';document.body.append(f);let submits=0;f.addEventListener('submit',e=>{e.preventDefault();submits++});f.requestSubmit();assert(submits===0,'Пустая форма дала submit');records.push({label:'Эксперимент 1',nativeValid:f.checkValidity(),submits});
+f.elements.title.value='   ';f.requestSubmit();const raw=Object.fromEntries(new FormData(f));records.push({label:'Эксперимент 2',raw,validated:validateTaskDraft(raw,[])});
+f.elements.title.value='  Изучить localStorage  ';const data=new FormData(f),value=validateTaskDraft(Object.fromEntries(data),[]);records.push({label:'Эксперимент 3',idType:typeof data.get('id'),titleType:typeof data.get('title'),value});const json=JSON.stringify({version:1,tasks:[{...value.value,completed:false}]});localStorage.setItem(key('demo'),json);records.push({label:'Эксперимент 4',storedType:typeof localStorage.getItem(key('demo')),json,parsed:JSON.parse(json)});localStorage.setItem(key('demo'),'{broken-json');records.push({label:'Эксперимент 5',result:loadTasks(localStorage,key('demo'),demoTasks)});f.remove();localStorage.removeItem(key('demo'));localStorage.removeItem(key('variant'));
+document.querySelector('#out').textContent='Все сценарии выполнены успешно.\n'+JSON.stringify(records,null,2);const a=document.querySelector('#save');a.href=URL.createObjectURL(new Blob([JSON.stringify({browser:navigator.userAgent,records},null,2)],{type:'application/json'}));a.download='tip-pr04-evidence.json';a.hidden=false;
+}catch(e){document.querySelector('#out').textContent='ОШИБКА: '+e.stack;}
+</script>
