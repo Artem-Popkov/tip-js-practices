@@ -1,0 +1,13 @@
+<!doctype html><meta charset="utf-8"><title>КР2 — запрос к API ПР5</title><style>body{font:20px system-ui;margin:32px;max-width:1100px}pre{font:20px monospace;background:#f1f5f9;padding:28px;white-space:pre-wrap}h1{font-size:28px}a{margin-right:24px}</style><nav><a href="?task=3">Задание 3</a><a href="?task=4">Задание 4</a></nav><h1 id="heading"></h1><p>Клиент и предметный API импортированы из собственного решения ПР5.</p><pre id="result">Выполняется запрос…</pre><script type="module">
+import {createApiClient} from '../src/api-client.js';
+import {createTaskApi} from '../src/task-api.js';
+const api=createTaskApi(createApiClient({baseUrl:'http://127.0.0.1:5505/api'}));
+const output=document.querySelector('#result');
+if(new URLSearchParams(location.search).get('task')==='4'){
+ document.querySelector('#heading').textContent='КР2 — задание 4: HTTP-ошибка';
+ try{await api.getTaskById(999);output.textContent='Ошибка: ожидался 404';}catch(error){output.textContent=['await api.getTaskById(999)','GET /api/tasks/999','','kind: '+error.kind,'status: '+error.status,'code: '+error.code,'','Исключение обработано в try/catch.'].join('\n');}
+}else{
+ document.querySelector('#heading').textContent='КР2 — задание 3: получение задач';
+ try{const {tasks,meta}=await api.getTasks({completed:false,priority:'high'});output.textContent=['await api.getTasks({ completed: false, priority: "high" })','GET /api/tasks?completed=false&priority=high','','id: '+JSON.stringify(tasks.map(t=>t.id)),'meta.total: '+meta.total,'',...tasks.map(t=>t.id+' — '+t.title)].join('\n');}catch(error){output.textContent=error.stack;}
+}
+</script>

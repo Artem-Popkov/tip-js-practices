@@ -1,0 +1,12 @@
+Точка: до fetch строка 67 1:66:0:file:///Users/artem/Desktop/tip-js-practices/practice-05/src/api-client.js
+Точка: после Response строка 68 1:67:0:file:///Users/artem/Desktop/tip-js-practices/practice-05/src/api-client.js
+Точка: перед JSON строка 82 1:81:0:file:///Users/artem/Desktop/tip-js-practices/practice-05/src/api-client.js
+Точка: обработчик ошибки строка 93 1:92:0:file:///Users/artem/Desktop/tip-js-practices/practice-05/src/api-client.js
+Пауза: 67 {"url":"http://127.0.0.1:51399/api/tasks/25"}
+Пауза: 68 {"url":"http://127.0.0.1:51399/api/tasks/25","status":200,"ok":true,"contentType":"application/json; charset=utf-8"}
+Пауза: 82 {"url":"http://127.0.0.1:51399/api/tasks/25","status":200,"ok":true,"contentType":"application/json; charset=utf-8"}
+Успешный payload: {"id":25,"title":"Исправить обработку ошибок","completed":true,"priority":"high","categoryId":2}
+Пауза: 67 {"url":"http://127.0.0.1:51399/api/tasks/999"}
+Пауза: 68 {"url":"http://127.0.0.1:51399/api/tasks/999","status":404,"ok":false,"contentType":"application/json; charset=utf-8"}
+Пауза: 93 {"url":"http://127.0.0.1:51399/api/tasks/999","errorKind":"http","errorStatus":404}
+Итоговый ApiError: {"kind":"http","status":404,"code":"TASK_NOT_FOUND","details":{"id":999}}

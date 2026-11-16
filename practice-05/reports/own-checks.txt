@@ -1,0 +1,26 @@
+Предварительный прогноз очередей: A B C D E F
+A: синхронный код
+B: начало async-функции
+C: конец синхронного кода
+D: обработчик Promise
+E: продолжение после await
+F: задача таймера
+Общий список: {"tasks":[{"id":1,"title":"Изучить функции","completed":true,"priority":"medium","categoryId":1},{"id":4,"title":"Подготовить модель задач","completed":false,"priority":"high","categoryId":2},{"id":7,"title":"Проверить методы массивов","completed":false,"priority":"low","categoryId":1},{"id":10,"title":"Оформить README","completed":true,"priority":"medium","categoryId":3},{"id":13,"title":"Разобрать Promise","completed":false,"priority":"high","categoryId":1},{"id":16,"title":"Проверить учебный API","completed":true,"priority":"high","categoryId":2},{"id":19,"title":"Описать контракт запросов","completed":false,"priority":"medium","categoryId":3},{"id":22,"title":"Подготовить демонстрацию","completed":false,"priority":"low","categoryId":2},{"id":25,"title":"Исправить обработку ошибок","completed":true,"priority":"high","categoryId":2},{"id":28,"title":"Добавить фильтры API","completed":false,"priority":"medium","categoryId":2},{"id":31,"title":"Сверить отчёт","completed":true,"priority":"low","categoryId":3},{"id":34,"title":"Провести рефакторинг клиента","completed":false,"priority":"high","categoryId":2}],"meta":{"total":12,"filters":{"completed":null,"priority":null,"categoryId":null,"q":""}}}
+Общий фильтр: {"tasks":[{"id":4,"title":"Подготовить модель задач","completed":false,"priority":"high","categoryId":2},{"id":13,"title":"Разобрать Promise","completed":false,"priority":"high","categoryId":1},{"id":34,"title":"Провести рефакторинг клиента","completed":false,"priority":"high","categoryId":2}],"meta":{"total":3,"filters":{"completed":false,"priority":"high","categoryId":null,"q":""}}}
+Вариант 7: {"tasks":[{"id":7,"title":"Проверить методы массивов","completed":false,"priority":"low","categoryId":1},{"id":16,"title":"Проверить учебный API","completed":true,"priority":"high","categoryId":2}],"meta":{"total":2,"filters":{"completed":null,"priority":null,"categoryId":null,"q":"провер"}},"categories":[{"id":1,"name":"Учёба"},{"id":2,"name":"Проект"},{"id":3,"name":"Организация"}]}
+Задача 25: {"id":25,"title":"Исправить обработку ошибок","completed":true,"priority":"high","categoryId":2}
+HTTP: {"url":"http://127.0.0.1:60115/api/health","status":200,"ok":true,"contentType":"application/json; charset=utf-8","payload":{"data":{"status":"ok"}}}
+HTTP: {"url":"http://127.0.0.1:60115/api/tasks/25","status":200,"ok":true,"contentType":"application/json; charset=utf-8","payload":{"data":{"id":25,"title":"Исправить обработку ошибок","completed":true,"priority":"high","categoryId":2}}}
+HTTP: {"url":"http://127.0.0.1:60115/api/tasks/999","status":404,"ok":false,"contentType":"application/json; charset=utf-8","payload":{"error":{"code":"TASK_NOT_FOUND","message":"Задача с id 999 не найдена.","details":{"id":999}}}}
+Ошибка: {"path":"/tasks/999","kind":"http","status":404,"code":"TASK_NOT_FOUND","details":{"id":999}}
+Ошибка: {"path":"/tasks","kind":"http","status":400,"code":"INVALID_QUERY","details":null}
+Ошибка: {"path":"/debug/error","kind":"http","status":503,"code":"SERVICE_UNAVAILABLE","details":null}
+Ошибка: {"path":"/debug/invalid-json","kind":"invalid-response","status":null,"code":null,"details":null}
+Ошибка: {"path":"/debug/text","kind":"invalid-response","status":null,"code":null,"details":null}
+Измерения, мс: {"sequential":[253.1,246.4,246],"parallel":[123.9,125.2,123.3],"delay":120}
+Собственная проверка 1: кодирование &, + и кириллицы — OK; http://127.0.0.1:60115/api/tasks?q=API+%26+%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8+%2B+JSON
+Собственная проверка 2: 404 сохраняет kind/status — OK
+Собственная проверка 3: задержка 120 мс, timeout 10 мс — OK
+Явная отмена: aborted — OK
+После остановки API: network — OK
+После повторного запуска: 12 задач — OK
