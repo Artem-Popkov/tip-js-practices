@@ -1,0 +1,8 @@
+Вариант 7: исходный поиск {"tasks":[{"id":7,"title":"Проверить методы массивов","completed":false,"priority":"low","categoryId":1},{"id":16,"title":"Проверить учебный API","completed":true,"priority":"high","categoryId":2}],"meta":{"total":2,"filters":{"completed":null,"priority":null,"categoryId":null,"q":"провер"}}}
+Вариант 7: создана задача {"id":35,"title":"Проверить учебный релиз","completed":false,"priority":"high","categoryId":2}
+Вариант 7: итоговый поиск {"tasks":[{"id":7,"title":"Проверить методы массивов","completed":false,"priority":"low","categoryId":1},{"id":16,"title":"Проверить учебный API","completed":true,"priority":"high","categoryId":2},{"id":35,"title":"Проверить учебный релиз","completed":false,"priority":"high","categoryId":2}],"meta":{"total":3,"filters":{"completed":null,"priority":null,"categoryId":null,"q":"провер"}}}
+Новый клиент видит серверную задачу — OK
+PATCH 4 → GET completed=false: {"before":[4,7,13,19,22,28,34],"after":[7,13,19,22,28,34]}
+Редактирование выполненной задачи сохраняет completed — OK
+До перезапуска API: 13 задач
+Новый процесс API: 12 исходных задач — OK
